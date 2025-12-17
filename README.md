@@ -1,14 +1,17 @@
 Online Store – Full Stack Web Application
+
 Project Overview
 This is a full-stack online store web application developed using Vue.js for the frontend and Node.js with Express for the backend. The application supports product browsing, cart management, secure checkout with Stripe, and an admin dashboard for managing products and orders.
 
 Features
+
 User Features
 •	User registration and login
 •	Product listing with search and pagination
 •	Add/remove items from cart
 •	Secure checkout using Stripe
 •	Order creation and tracking
+
 Admin Features
 •	Admin login and role-based access
 •	Product management (add, update, delete)
@@ -16,12 +19,14 @@ Admin Features
 •	Update order status
 
 Technology Stack
+
 Frontend
 •	Vue.js 3
 •	Vue Router
 •	Pinia
 •	Axios
 •	CSS (custom styling)
+
 Backend
 •	Node.js
 •	Express.js
@@ -30,6 +35,7 @@ Backend
 •	Stripe API
 
 Installation & Setup
+
 Backend Setup
 cd backend
 npm install
