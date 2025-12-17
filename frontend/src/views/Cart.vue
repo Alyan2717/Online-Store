@@ -1,20 +1,16 @@
 <template>
     <div>
         <h2>Your Cart</h2>
-
         <div v-if="items.length === 0" class="card">
             Cart is empty
         </div>
-
         <div v-else class="card">
             <div v-for="item in items" :key="item._id"
                 style="display:flex; justify-content:space-between; margin-bottom:10px;">
                 <span>{{ item.title }} (x{{ item.qty }})</span>
                 <span>${{ item.price * item.qty }}</span>
             </div>
-
             <hr />
-
             <h3>Total: ${{ total }}</h3>
 
             <button class="btn" @click="checkout">Checkout</button>
