@@ -5,10 +5,18 @@
             Cart is empty
         </div>
         <div v-else class="card">
-            <div v-for="item in items" :key="item._id"
-                style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                <span>{{ item.title }} (x{{ item.qty }})</span>
-                <span>${{ item.price * item.qty }}</span>
+            <div v-for="item in items" :key="item._id" class="cart-item">
+                <div>
+                    <strong>{{ item.title }}</strong>
+                    <div class="qty">Qty: {{ item.qty }}</div>
+                </div>
+
+                <div class="right">
+                    <span class="price">${{ item.price * item.qty }}</span>
+                    <button class="btn danger small" @click="remove(item._id)">
+                        Remove
+                    </button>
+                </div>
             </div>
             <hr />
             <h3>Total: ${{ total }}</h3>
@@ -17,6 +25,39 @@
         </div>
     </div>
 </template>
+<style scoped>
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.qty {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price {
+    font-weight: 600;
+}
+
+.btn.small {
+    padding: 4px 10px;
+    font-size: 14px;
+}
+</style>
 
 
 <script setup>
